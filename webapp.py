@@ -6,10 +6,20 @@ app = Flask(__name__) #__name__ = "__main__" if this is the file that was run.  
 
 @app.route("/")
 def render_main():
-    return render_template('home.html', my_variable="test")
+    return render_template('2.html', my_variable="test")
 
-get_state_options
 
+def get_state_options():
+    with open('county_demographics.json') as demographics_data:
+        counties = json.load(demographics_data)
+    list=[]
+    for each county in counties:
+        if !(county["state"] in list):
+            list+=county["state"]
+    a=""
+    option=""
+    for each county["state"] in list:
+        
 
 if __name__=="__main__":
     app.run(debug=True, port=54321)
