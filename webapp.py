@@ -18,7 +18,9 @@ def get_state_options():
             list+=county["state"]
     a=""
     option=""
-    for each county["state"] in list:
+    for each state in list:
+        option = option + Markup("<option value=\"" + state + "\">" + state + "</option>")
+    return option
         
 
 if __name__=="__main__":
